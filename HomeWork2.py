@@ -1,5 +1,4 @@
 
-
 data = ['game over', '08.03.2021', 751, True, 3.14]
 data_0 = print(type(data[0]))
 data_1 = print(type(data[1]))
@@ -46,7 +45,8 @@ month.append(user_month)
 autumn = month[8:11:1]
 spring = month[2:5:1]
 summer = month[5:8:1]
-del month[2:11] # не могу понять почему список не останавливается на 12 при применении метода del???? Голова увеличилась в 2 раза)))
+del month[2:11] # 'не могу понять почему список не останавливается на 12 при применении метода del????' \
+                # 'Голова увеличилась в 2 раза)))'
 winter = month
 if user_month == autumn[0] or user_month == autumn[1] or user_month == autumn[2]:
     print('Autumn')
@@ -73,6 +73,9 @@ if user_month_dict == 9 or user_month_dict == 10 or user_month_dict == 11:
 
 print('NEXT')
 
+
+
+
 user_words_enter = input('Enter any data using a space between them: ')
 user_words_end = []
 #print(user_words_enter.count(' '))
@@ -89,7 +92,50 @@ for data in range(user_words_enter.count(' ') + 1):
         i += 1
 
 
+print('NEXT')
 
+my_list = [32, 25, 17, 10, 6, 5, 4, 3, 2, 1]
+user_number = int(input('Enter new rating element pls - '))
+i = 0
+
+for el in my_list:
+    if user_number <= el:
+        i += 1
+        print(i)
+my_list.insert(i, float(user_number))
+print(my_list)
+
+
+print('NEXT')
+
+goods = []
+features = {'название': '', 'цена': '', 'количество': '', 'единица измерения': ''}
+analytics = {'название': [], 'цена': [], 'количество': [], 'единица измерения': []}
+num = 0
+
+assortment = []
+items = {'name': '' , 'price': '', 'quantity': '', 'measure': ''}
+items_analytics = {'name': [] , 'price': [], 'quantity': [], 'measure': []}
+num = 0
+# print(items)
+# items['name'] = input('Enter - ') - вместо ['name'] необходимо перебрать все элементы
+# print(items)
+# print(type(items['name']))
+while True:
+    if input('Для выхода из приложения нажмите Q, для продолжения Enter: ').upper() == 'Q':
+        break
+    for items_pos in items:
+        propose = input(f'Enter {items_pos} - ') # 'есть ли способ сделать проверку вводимых значений на int и str для
+    # \ повторного запроса с уточнением типа вводимых значений?
+        items[items_pos] = int(propose) if (items_pos == 'price' or items_pos == 'quantity') else propose
+        items_analytics[items_pos].append(items[items_pos])
+    # бесконечное наполнени словаря до команды прекратить
+    assortment.append((num, items.copy()))
+    print(f"\nСтруктура товаров\n{assortment}")
+    print(f"\nТекущая аналитика по товарам:\n{'©' * 30}")
+    for key, value in items_analytics.items():
+        print(f"{key[:25]:>30}: {value}")
+    print('©' * 30)
 
 
 
