@@ -1,3 +1,7 @@
+from sys import argv
+
+# name, working_hours, pay_for_hour, prize, total_salary = argv
+
 working_hours = 0
 pay_for_hour = 100
 total_salary = 0
