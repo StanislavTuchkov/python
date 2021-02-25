@@ -1,0 +1,4 @@
+Smith: 5000.34
+Mr.Black: 21000
+Ms.White: 19000
+Peterson: 22000
